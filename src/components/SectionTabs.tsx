@@ -1,6 +1,6 @@
 import React from 'react';
-import { View, Text, Pressable, StyleSheet, ScrollView } from 'react-native';
-import { colors, radius, spacing, typography } from '@/theme/token';
+import { View, Text, Pressable, StyleSheet } from 'react-native';
+import { colors, radius, spacing, shadow, typography } from '@/theme/token';
 import { ShopTab } from '@/types';
 
 const TABS: { key: ShopTab; label: string }[] = [
@@ -16,49 +16,53 @@ interface Props {
 
 export function SectionTabs({ active, onChange }: Props) {
   return (
-    <ScrollView
-      horizontal
-      showsHorizontalScrollIndicator={false}
-      contentContainerStyle={styles.row}
-    >
+    <View style={styles.track}>
       {TABS.map((tab) => {
         const isActive = tab.key === active;
         return (
           <Pressable
             key={tab.key}
             onPress={() => onChange(tab.key)}
-            style={[styles.chip, isActive && styles.chipActive]}
+            style={[styles.segment, isActive && styles.segmentActive]}
             accessibilityRole="tab"
             accessibilityState={{ selected: isActive }}
           >
-            <Text style={[styles.label, isActive && styles.labelActive]}>{tab.label}</Text>
+            <Text style={[styles.label, isActive && styles.labelActive]} numberOfLines={1}>
+              {tab.label}
+            </Text>
           </Pressable>
         );
       })}
-    </ScrollView>
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  row: {
-    paddingHorizontal: spacing.lg,
-    paddingVertical: spacing.md,
-    gap: spacing.sm,
+  track: {
+    flexDirection: 'row',
+    backgroundColor: colors.segmentTrack,
+    borderRadius: radius.pill,
+    padding: 4,
+    marginHorizontal: spacing.lg,
+    marginVertical: spacing.md,
   },
-  chip: {
-    paddingHorizontal: spacing.lg,
+  segment: {
+    flex: 1,
     paddingVertical: spacing.sm,
     borderRadius: radius.pill,
-    backgroundColor: colors.chipBackground,
+    alignItems: 'center',
+    justifyContent: 'center',
   },
-  chipActive: {
-    backgroundColor: colors.primary,
+  segmentActive: {
+    backgroundColor: colors.surface,
+    ...shadow.card,
   },
   label: {
     ...typography.bodyMedium,
     color: colors.textSecondary,
   },
   labelActive: {
-    color: colors.primaryText,
+    color: colors.primary,
+    fontWeight: '700',
   },
 });
