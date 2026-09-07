@@ -1,17 +1,19 @@
 export const colors = {
-  background: '#F7F8FA',
+  background: '#F5F4FA',
   surface: '#FFFFFF',
-  primary: '#1B4D3E', // deep green — common in fintech; swap for 1Fi's brand color
+  primary: '#6C3CE0',
+  primaryDark: '#4B15C0',
   primaryText: '#FFFFFF',
-  textPrimary: '#12161C',
+  textPrimary: '#15131C',
   textSecondary: '#6B7280',
   textMuted: '#9CA3AF',
-  border: '#E5E7EB',
+  border: '#ECEAF3',
   success: '#1E8E5A',
   error: '#DC2626',
   tabInactive: '#9CA3AF',
-  tabActive: '#1B4D3E',
-  chipBackground: '#EEF2F1',
+  tabActive: '#6C3CE0',
+  chipBackground: '#EFE9FB',
+  segmentTrack: '#EEECF6',
 };
 
 export const spacing = {
@@ -24,17 +26,17 @@ export const spacing = {
 };
 
 export const radius = {
-  sm: 6,
-  md: 12,
-  lg: 16,
+  sm: 8,
+  md: 14,
+  lg: 20,
   pill: 999,
 };
 
 export const typography = {
-  fontFamily: undefined as string | undefined, // set to a custom family once loaded via expo-font
-  h1: { fontSize: 24, fontWeight: '700' as const },
-  h2: { fontSize: 20, fontWeight: '700' as const },
-  h3: { fontSize: 16, fontWeight: '600' as const },
+  fontFamily: undefined as string | undefined,
+  h1: { fontSize: 24, fontWeight: '800' as const },
+  h2: { fontSize: 20, fontWeight: '800' as const },
+  h3: { fontSize: 16, fontWeight: '700' as const },
   body: { fontSize: 14, fontWeight: '400' as const },
   bodyMedium: { fontSize: 14, fontWeight: '600' as const },
   caption: { fontSize: 12, fontWeight: '400' as const },
