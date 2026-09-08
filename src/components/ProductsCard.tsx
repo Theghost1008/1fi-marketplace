@@ -9,7 +9,7 @@ interface Props {
   onPress: (id: string) => void;
 }
 
-export function ProductCard({ product, onPress }: Props) {
+function ProductCardComponent({ product, onPress }: Props) {
   return (
     <Pressable
       onPress={() => onPress(product.id)}
@@ -34,6 +34,7 @@ export function ProductCard({ product, onPress }: Props) {
   );
 }
 
+export const ProductCard = React.memo(ProductCardComponent)
 const styles = StyleSheet.create({
   card: {
     flex: 1,

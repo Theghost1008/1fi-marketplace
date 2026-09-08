@@ -6,7 +6,7 @@ import { ShopTab } from '@/types';
 const TABS: { key: ShopTab; label: string }[] = [
   { key: 'topBrands', label: 'Top Brands' },
   { key: 'nearbyStores', label: 'Nearby Stores' },
-  { key: 'marketplace', label: '1Fi Marketplace' },
+  { key: 'marketplace', label: 'Marketplace' },
 ];
 
 interface Props {
@@ -44,7 +44,9 @@ const styles = StyleSheet.create({
     borderRadius: radius.pill,
     padding: 4,
     marginHorizontal: spacing.lg,
-    marginVertical: spacing.md,
+    marginTop: -24,
+    marginBottom: spacing.md,
+    ...shadow.card
   },
   segment: {
     flex: 1,

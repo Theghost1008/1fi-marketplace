@@ -1,7 +1,7 @@
 import React from 'react';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { ShopScreen } from '@/screens/ShopScreen';
-import { ProductDetailScreen } from '@/screens/ProductDetailScreen';
+import { ProductDetailScreen } from '@/screens/ProductDetailsScreen';
 import { colors } from '@/theme/token';
 
 export type RootStackParamList = {
